@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <title>ng-macro | Jonnie.io</title>
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body ng-app="ngMacro">
-    <div class="container">
+    <div ng-controller="macroCtrl" class="container">
         <div class="row">
             <div class="col-sm-12"><h1>Ng-Macro</h1></div>
         </div>
@@ -35,6 +36,13 @@
                         <option value="female">female</option>
                      </select>
                   </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <p class="bg-primary kcal-flash">
+                   <b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp; </b>&nbsp; {{ getMetaRate()}}
+                  </p>
                </div>
             </div>
     </div>
