@@ -94,4 +94,11 @@ app.controller('macroCtrl', function ($scope){
 	    }
 	}
 
+	$scope.getName = function(){
+            if($scope.user.name===undefined || $scope.user.name==="")
+                return "";
+
+            return $scope.user.name+"'s";
+        }
+
 });
