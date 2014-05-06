@@ -24,7 +24,35 @@ app.controller('macroCtrl', function ($scope){
 	        ,fats: 0
 	        ,carbs:0
 	    }
-	}
+	};
+
+	$scope.activityLevels = [{
+	        title: "Little or No Exercise"
+	        ,description: "You are Lazy and avoid exercise"
+	        ,value: 1.2
+	    }
+	    ,{
+	        title: "Light Exercise"
+	        ,description: "Exercise 1-3 times a week"
+	        ,value: 1.375
+	    }
+	    ,{
+	        title: "Moderate Exercise"
+	        ,description: "Exercise 3-5 times a week"
+	        ,value: 1.55
+	    }
+	    ,{
+	        title: "Heavey Exercise"
+	        ,description: "You Exercise 6-7 times a week"
+	        ,value: 1.725
+	    }
+	    ,{
+	        title: "Professional Athlete"
+	        ,description: "You Exercise approx 2 times a Day"
+	        ,value: 1.9
+	    }
+	];
+
 
     $scope.getMetaRate = function(){
 
@@ -46,5 +74,24 @@ app.controller('macroCtrl', function ($scope){
 		return (!isNaN(meta) && (meta!=null)) ? parseFloat(meta).toFixed(2) : "Please Fill Out the above Form";
 
 	};
+	$scope.updateNutrition=function(){
+	    if(($scope.user.sex === "male" || $scope.user.sex === "female") && $scope.user.weight>0 && $scope.user.height>0 && $scope.user.age>0 && $scope.user.activityLevel>0){
+	        $scope.goals.current.calories = parseFloat($scope.user.bmr * $scope.user.activityLevel)|| 0;
+	        $scope.goals.loss.calories = $scope.goals.current.calories * 0.85 || 0;
+	        $scope.goals.gain.calories = $scope.goals.current.calories * 1.15 || 0;
+
+	        $scope.goals.current.protein = $scope.user.weight*2.204 || 0;
+	        $scope.goals.loss.protein = $scope.user.weight*2.204 || 0;
+	        $scope.goals.gain.protein = $scope.user.weight*2.204*1.5 || 0;
+
+	        $scope.goals.current.carbs = ($scope.goals.current.calories*0.3)/4 || 0; 
+	        $scope.goals.loss.carbs = ($scope.goals.loss.calories*0.15)/4 || 0;
+	        $scope.goals.gain.carbs = ($scope.goals.gain.calories*0.3)/4 || 0;
+
+	        $scope.goals.current.fats = ($scope.goals.current.calories -($scope.goals.current.protein*4)-($scope.goals.current.carbs*4))/9 || 0;
+	        $scope.goals.loss.fats = ($scope.goals.loss.calories -($scope.goals.loss.protein*4)-($scope.goals.loss.carbs*4))/9 || 0;
+	        $scope.goals.gain.fats = ($scope.goals.gain.calories -($scope.goals.gain.protein*4)-($scope.goals.gain.carbs*4))/9 || 0;
+	    }
+	}
 
 });
