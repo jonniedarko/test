@@ -252,28 +252,28 @@ var app = angular.module('ngMacro', []);
    });
    ```
    <p>And add it to our container div (div just under our body) as follows</p>
-   ```html
-   <div ngcontroller="macroCtrl" class="container">
-   ```
-      <p>Here we are creating a controller "macroCtrl" and we are passing it a new child
-         <code>$scope</code> which is an injectable parameter. This is taken care of by AngularJS, we
-         just need to include it in our function to use it. We also just initialised the user variable.
-         (<strong>note:</strong> inside the controller when we create a variable that can be used in our
-         view, index.html, we create it under the <code>$scope</code> variable. This is almost like
-         making them public, any variable not attached to the $scope cannot be accessed by our
-         view)
-      </p>
-      <p>So Back to our App. The first thing we need before we can get our suggested Calorie intake
-         is caculate the users Basic Metabolic Rate. Lets add some where to view it:
-      </p>
-      <p>Inside index.html add the following after the last "row" div</p>
-      ```html
-      <div class="row">
-         <div class="colsm12"&
-         gt;<p class="bgprimary
-         kcalflash"&
-         gt;<b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;
-         </b>&nbsp; {{getMetaRate()}}</p>
+    ```html
+        <div ngcontroller="macroCtrl" class="container">
+    ```
+
+  <p>Here we are creating a controller "macroCtrl" and we are passing it a new child
+     <code>$scope</code> which is an injectable parameter. This is taken care of by AngularJS, we
+     just need to include it in our function to use it. We also just initialised the user variable.
+     (<strong>note:</strong> inside the controller when we create a variable that can be used in our
+     view, index.html, we create it under the <code>$scope</code> variable. This is almost like
+     making them public, any variable not attached to the $scope cannot be accessed by our
+     view)
+  </p>
+  <p>So Back to our App. The first thing we need before we can get our suggested Calorie intake
+     is caculate the users Basic Metabolic Rate. Lets add some where to view it:
+  </p>
+  <p>Inside index.html add the following after the last "row" div</p>
+
+  ```html
+    <div class="row">
+        <div class="colsm12"><p class="bgprimarykcalflash">
+            <p><b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;</b>
+            &nbsp; {{getMetaRate()}}</p>
       </div>
    </div>
    ```
