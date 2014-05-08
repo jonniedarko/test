@@ -1,4 +1,9 @@
 .kcal-flash{
     padding: 5px;
     padding-left: 15px;
+    color: #fff;
+    background-color: #428bca;
+}
+.float-right{
+    float:right;
 }
