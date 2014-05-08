@@ -96,80 +96,80 @@ href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">Ang
 </ul>
 <p>Create Basic html form using bootstrap styling</p>
 <pre name="code" class="html" >
-&lt;!doctype html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-&lt;meta charset="UTF8"&
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF8"&
 gt;
-&lt;title&gt;ngmacro
-| Jonnie.io&lt;/title&gt;
-&lt;link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css"&gt;
-&lt;/head&gt;
-&lt;body&gt;
-&lt;div class="container"&gt;
-&lt;div class="row"&gt;
-&lt;div class="colsm12"&
-gt;&lt;h1&gt;NgMacro&
-lt;/h1&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="row"&gt;
-&lt;div class="colsm8
+<title>ngmacro
+| Jonnie.io</title>
+<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="colsm12"&
+gt;<h1>NgMacro&
+lt;/h1></div>
+</div>
+<div class="row">
+<div class="colsm8
 formgroup"&
-gt;&lt;input type="text" class="formcontrol"
-id="user_name" placeholder="What's your name?"&gt;&lt;/div&gt;
-&lt;div class="colsm4
+gt;<input type="text" class="formcontrol"
+id="user_name" placeholder="What's your name?"></div>
+<div class="colsm4
 formgroup"&
-gt;&lt;input type="text" class="formcontrol"
-id="user_id" placeholder="What's your age?"&gt;&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="row"&gt;
-&lt;div class="colsm4
+gt;<input type="text" class="formcontrol"
+id="user_id" placeholder="What's your age?"></div>
+</div>
+<div class="row">
+<div class="colsm4
 formgroup"&
 gt;
-&lt;div class="inputgroup"&
+<div class="inputgroup"&
 gt;
-&lt;input type="text" class="formcontrol"
+<input type="text" class="formcontrol"
 id="user_height" placeholder="What's your
-height?"&gt;
-&lt;span class="inputgroupaddon"&
-gt;cm&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colsm4
+height?">
+<span class="inputgroupaddon"&
+gt;cm</span>
+</div>
+</div>
+<div class="colsm4
 formgroup"&
 gt;
-&lt;div class="inputgroup"&
+<div class="inputgroup"&
 gt;
-&lt;input type="text" class="formcontrol"
+<input type="text" class="formcontrol"
 id="user_weight" placeholder="What's
-your weight?"&gt;
-&lt;span class="inputgroupaddon"&
-gt;kg&lt;/span&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="colsm4
+your weight?">
+<span class="inputgroupaddon"&
+gt;kg</span>
+</div>
+</div>
+<div class="colsm4
 formgroup"&
 gt;
-&lt;div class=""&gt;
-&lt;select name="" id="user_sex" class="formcontrol
+<div class="">
+<select name="" id="user_sex" class="formcontrol
 formcontrol
 marginzero"&
 gt;
-&lt;option value=""&gt;what is your sex?&lt;/option&gt;
-&lt;option value="male"&gt;Male&lt;/option&gt;
-&lt;option value="female"&gt;female&lt;/option&gt;
-&lt;/select&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;!Dependencies&
+<option value="">what is your sex?</option>
+<option value="male">Male</option>
+<option value="female">female</option>
+</select>
+</div>
+</div>
+</div>
+</div>
+<!Dependencies&
 gt;
-&lt;script src="vendor/jquery/jquery.min.js"&gt;&lt;/script&gt;
-&lt;script src="vendor/bootstrap/js/bootstrap.min.js"&gt;&lt;/script&gt;
-&lt;script src="vendor/angular/angular.min.js"&gt;&lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<script src="vendor/angular/angular.min.js"></script>
+</body>
+</html>
 </pre>
 <p>(If you prefer you can download everything from this point checkout the github<a
 href="https://github.com/jonniedarko/ngmacro/
@@ -179,10 +179,10 @@ commit/71c56c4ba5d65363339fd4b48ab492c63
 height, weight , age, sex and to personalise it their name.</p>
 <p>find the input for the user name and add the ngModel attribute "user.name"</p>
 <pre name="code" class="html" >
-&lt;input type="text" class="formcontrol"
+<input type="text" class="formcontrol"
 id="user_name" ngmodule="
 user.name"
-placeholder="What's your name?"&gt;
+placeholder="What's your name?">
 </pre>
 <p>Now do the Same for user.sex, user.height, user.weight, and user.age. While we are at it
 create a new app.js file in out ngmacro
@@ -196,12 +196,12 @@ var app = angular.module('ngMacro', []);
 </pre>
 <p>inside our index file change our body tag to:</p>
 <pre name="code" class ="html">
-&lt;body ngapp="
-ngMacro"&gt;
+<body ngapp="
+ngMacro">
 </pre>
 <p>and under the dependency scripts include our app.js file </p>
 <pre name="code" class="javascript" >
-&lt;script src="app.js"&gt;&lt;/script&gt;
+<script src="app.js"></script>
 </pre>
 <p><strong>Note:</strong> It is essential this is included after our AngularJS file and
 AngularJS's dependencies otherwise you will get an <em>Uncaught ReferenceError: angular is
@@ -232,8 +232,8 @@ $scope.user = { };
 </pre>
 <p>And add it to our container div (div just under our body) as follows</p>
 <pre name="code" class="html">
-&lt;div ngcontroller="
-macroCtrl" class="container"&gt;
+<div ngcontroller="
+macroCtrl" class="container">
 </pre>
 <p>Here we are creating a controller "macroCtrl" and we are passing it a new child
 <code>$scope</code> which is an injectable parameter. This is taken care of by AngularJS, we
@@ -246,13 +246,13 @@ view)</p>
 is caculate the users Basic Metabolic Rate. Lets add some where to view it:</p>
 <p>Inside index.html add the following after the last "row" div</p>
 <pre name ="code" class="html">
-&lt;div class="row"&gt;
-&lt;div class="colsm12"&
-gt;&lt;p class="bgprimary
+<div class="row">
+<div class="colsm12"&
+gt;<p class="bgprimary
 kcalflash"&
-gt;&lt;b&gt;&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;
-&lt;/b&gt;&nbsp; {{getMetaRate()}}&lt;/p&gt;&lt;/div&gt;
-&lt;/div&gt;
+gt;<b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;
+</b>&nbsp; {{getMetaRate()}}</p></div>
+</div>
 </pre>
 <p>create style.css. Add the following just to keep things looking well and don't forget to add in
 our html page's head right after bootstrap</p>
@@ -297,56 +297,56 @@ commit/9584f3eb0a6a71193ea41913c68eaa013
 <p>finally we are going to finish of our app by calculating the Calories and displaying them. Add
 the following to the Index page:</p>
 <pre name ="code" class="html">
-&lt;div class="row"&gt;
-&lt;div class="colsm12"&
+<div class="row">
+<div class="colsm12"&
 gt;
-&lt;select name="" id="" class="formcontrol"
+<select name="" id="" class="formcontrol"
 ngmodel="
 user.activityLevel"
 ngchange="{{
-updateNutrition()}}"&gt;
-&lt;option value=""&gt;Select you Activity Level&lt;/option&gt;
-&lt;option ngrepeat="
+updateNutrition()}}">
+<option value="">Select you Activity Level</option>
+<option ngrepeat="
 activityLevel in activityLevels"
-value="{{activityLevel.value}}"&gt;{{activityLevel.title}}&lt;/option&gt;
-&lt;/select&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="row"&gt;
-&lt;div class="colsm12"&
+value="{{activityLevel.value}}">{{activityLevel.title}}</option>
+</select>
+</div>
+</div>
+<div class="row">
+<div class="colsm12"&
 gt;
-&lt;table class="table tablebordered"&
+<table class="table tablebordered"&
 gt;
-&lt;thead&gt;
-&lt;th&gt;&lt;/th&gt;
-&lt;td ngrepeat="
-goal in goals"&gt;{{goal.title}}&lt;/td&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;Calories:&lt;/td&gt;
-&lt;td ngrepeat="
-goal in goals"&gt;{{goal.calories | number:0}}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Protien:&lt;/td&gt;
-&lt;td ngrepeat="
-goal in goals"&gt;{{goal.protein | number:0}}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Fats:&lt;/td&gt;
-&lt;td ngrepeat="
-goal in goals"&gt;{{goal.fats | number:0}}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;Carbs:&lt;/td&gt;
-&lt;td ngrepeat="
-goal in goals"&gt;{{goal.carbs | number:0}}&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;/div&gt;
-&lt;/div&gt;
+<thead>
+<th></th>
+<td ngrepeat="
+goal in goals">{{goal.title}}</td>
+</thead>
+<tbody>
+<tr>
+<td>Calories:</td>
+<td ngrepeat="
+goal in goals">{{goal.calories | number:0}}</td>
+</tr>
+<tr>
+<td>Protien:</td>
+<td ngrepeat="
+goal in goals">{{goal.protein | number:0}}</td>
+</tr>
+<tr>
+<td>Fats:</td>
+<td ngrepeat="
+goal in goals">{{goal.fats | number:0}}</td>
+</tr>
+<tr>
+<td>Carbs:</td>
+<td ngrepeat="
+goal in goals">{{goal.carbs | number:0}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </pre>
 <p>Now thats our view template finished. But it will not look right yet as here we are introducing
 2 more AngularJS directives , <a href="">ngRepeat</a> and <a href="">ngChange</a> which
@@ -422,8 +422,8 @@ title: "Professional Athlete"
 ];
 $scope.updateNutrition=function(){
 if(($scope.user.sex === "male" || $scope.user.sex === "female") &amp;&amp;
-$scope.user.weight&gt;0 &amp;&amp; $scope.user.height&gt;0 &amp;&amp;
-$scope.user.age&gt;0 &amp;&amp; $scope.user.activityLevel&gt;0){
+$scope.user.weight>0 &amp;&amp; $scope.user.height>0 &amp;&amp;
+$scope.user.age>0 &amp;&amp; $scope.user.activityLevel>0){
 $scope.goals.current.calories = parseFloat($scope.user.bmr * $scope.user.activityLevel)||
 0;
 $scope.goals.loss.calories = $scope.goals.current.calories * 0.85 || 0;
