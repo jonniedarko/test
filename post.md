@@ -1,5 +1,5 @@
-ngMacro:
-An Introduction to AngularJS
+ngMacro: An Introduction to AngularJS
+=====================================
 <p>In this tutorial we will jump head first into building a simple but functional AngularJS
    Application. We will be building a simple Macro Calculator which can calculate the calories,
    protein, Carbs and fats required for increasing muscle, loosing fat or maintaining current
@@ -186,7 +186,6 @@ An Introduction to AngularJS
    </body>
 </html>
 ```
-<!--```-->
 <p>(If you prefer you can download everything from this point checkout the github<a
    href="https://github.com/jonniedarko/ngmacro/
    commit/71c56c4ba5d65363339fd4b48ab492c63
@@ -196,9 +195,7 @@ An Introduction to AngularJS
 </p>
 <p>find the input for the user name and add the ngModel attribute "user.name"</p>
 ```html
-<input type="text" class="formcontrol"
-   id="user_name" ngmodule="user.name"
-   placeholder="What's your name?">
+<input type="text" class="formcontrol" id="user_name" ngmodule="user.name" placeholder="What's your name?">
 ```
 <p>Now do the Same for user.sex, user.height, user.weight, and user.age. While we are at it
    create a new app.js file in out ngmacro
@@ -214,11 +211,11 @@ var app = angular.module('ngMacro', []);
 <p>inside our index file change our body tag to:</p>
 ```html
 <body ngapp="ngMacro">
-   ```
+```
    <p>and under the dependency scripts include our app.js file </p>
-   ```javascript
-   <script src="app.js"></script>
-   ```
+```javascript
+<script src="app.js"></script>
+```
    <p><strong>Note:</strong> It is essential this is included after our AngularJS file and
       AngularJS's dependencies otherwise you will get an <em>Uncaught ReferenceError: angular is
       not defined</em> and possible an <em>Uncaught Error: [$injector:modulerr]</em> in the
@@ -246,10 +243,10 @@ var app = angular.module('ngMacro', []);
       behaviors to it.
    </p>
    <p>So lets creat our first controller. Add the following to our app.js file:</p>
-   ```javascript
-   app.controller('macroCtrl', function ($scope){
-        $scope.user = { };
-   });
+```javascript
+app.controller('macroCtrl', function ($scope){
+    $scope.user = { };
+});
    ```
    <p>And add it to our container div (div just under our body) as follows</p>
 
@@ -283,32 +280,34 @@ var app = angular.module('ngMacro', []);
 </p>
 ```css
 .kcalflash{
-padding: 5px;
-paddingleft:
-15px;
+    padding: 5px;
+    paddingleft:
+    15px;
 }
 ```
    <p>now lets wire things up...</p>
    <p>Add the following inside our controller.</p>
 ```javascript
 $scope.getMetaRate = function(){
-var meta;
-if($scope.user.sex === "male"){
-meta = (88.362 + (13.397 * parseFloat( $scope.user.weight) )
-+(5.799 * parseFloat( $scope.user.height) )
-(
-5.677 * parseFloat( $scope.user.age) ) || 0 );
-}else if($scope.user.sex === "female"){
-meta = (447.593 + (9.247 * parseFloat( $scope.user.weight) )
-+(3.098 * parseFloat( $scope.user.height) )
-(
-4.33 * parseFloat( $scope.user.age) ) || 0 );
-}
-else meta = null;
-$scope.user.bmr= meta;
-return (!isNaN(meta) &amp;&amp; (meta!=null)) ? parseFloat(meta).toFixed(2) : "Please Fill
-Out the above Form";
-};
+
+        var meta; 
+        if($scope.user.sex === "male"){
+            meta = (88.362 + (13.397 * parseFloat(  $scope.user.weight) ) 
+                    +(5.799 * parseFloat(  $scope.user.height) )
+                    -(5.677 * parseFloat(  $scope.user.age) ) || 0 ); 
+                    console.log("Meta = "+meta); 
+        }else if($scope.user.sex === "female"){
+            meta = (447.593 + (9.247 * parseFloat(  $scope.user.weight) )
+                    +(3.098 * parseFloat(  $scope.user.height) )
+                    -(4.33 * parseFloat(  $scope.user.age) ) || 0 );
+        }
+        else{ meta = null;}
+
+        $scope.user.bmr= meta;
+
+        return (!isNaN(meta) && (meta!=null)) ? parseFloat(meta).toFixed(2) : "Please Fill Out the above Form";
+
+    };
 ```
    <p>This might seem scary at first but once you have any experience with javascript its fairly
       easy to understand. Simply put it check if the user is male or female and returns the Metabolic
@@ -385,27 +384,27 @@ Out the above Form";
    </p>
 ```javascript
 $scope.goals = {
-current: {
-title:"Mainteance"
-,calories: 0
-,protein: 0
-,fats: 0
-,carbs:0
-}
-,loss: {
-title:"Fat Loss"
-,calories: 0
-,protein: 0
-,fats: 0
-,carbs:0
-}
-,gain:{
-title:"Muscle Gain"
-,calories: 0
-,protein: 0
-,fats: 0
-,carbs:0
-}
+    current: {
+        title:"Mainteance"
+        ,calories: 0
+        ,protein: 0
+        ,fats: 0
+        ,carbs:0
+    }
+    ,loss: {
+        title:"Fat Loss"
+        ,calories: 0
+        ,protein: 0
+        ,fats: 0
+        ,carbs:0
+    }
+    ,gain:{
+        title:"Muscle Gain"
+        ,calories: 0
+        ,protein: 0
+        ,fats: 0
+        ,carbs:0
+    }
 }
 ```
    <p>This simply creates and initialises the goals object and now our view will look more finalised
