@@ -269,7 +269,7 @@ var app = angular.module('ngMacro', []);
          is caculate the users Basic Metabolic Rate. Lets add some where to view it:
       </p>
       <p>Inside index.html add the following after the last "row" div</p>
-      <pre name ="code" class="html">
+      ```html
       <div class="row">
          <div class="colsm12"&
          gt;<p class="bgprimary
@@ -282,7 +282,7 @@ var app = angular.module('ngMacro', []);
    <p>create style.css. Add the following just to keep things looking well and don't forget to add in
       our html page's head right after bootstrap
    </p>
-   <pre name ="code" class="css">
+   ```css
    .kcalflash{
    padding: 5px;
    paddingleft:
@@ -291,7 +291,7 @@ var app = angular.module('ngMacro', []);
    ```
    <p>now lets wire things up...</p>
    <p>Add the following inside our controller.</p>
-   <pre name ="code" class="javascript">
+   ```javascript
    $scope.getMetaRate = function(){
    var meta;
    if($scope.user.sex === "male"){
@@ -324,7 +324,7 @@ var app = angular.module('ngMacro', []);
    <p>finally we are going to finish of our app by calculating the Calories and displaying them. Add
       the following to the Index page:
    </p>
-   <pre name ="code" class="html">
+   ```html
    <div class="row">
       <div class="colsm12">
          <select name="" id="" class="formcontrol"
@@ -384,7 +384,7 @@ var app = angular.module('ngMacro', []);
    <p>ngRepeat is basically a "for" loop that repeats the element for each variable in an array.in
       order for this to display correctly add the following to the controller:
    </p>
-   <pre name ="code" class="javascript">
+   ```javascript
    $scope.goals = {
    current: {
    title:"Mainteance"
@@ -420,7 +420,7 @@ var app = angular.module('ngMacro', []);
       which we calculated earlier and the the activity level and weight. so add the following to the
       controller:
    </p>
-   <pre name ="code" class="javascript">
+   ```javascript
    $scope.activityLevels = [{
    title: "Little or No Exercise"
    ,description: "You are Lazy and avoid exercise"
