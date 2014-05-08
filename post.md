@@ -120,7 +120,7 @@ An Introduction to AngularJS
       href="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js">AngularJS</a></li>
 </ul>
 <p>Create Basic html form using bootstrap styling</p>
-<!--```html-->
+
 ```html
 <!doctype html>
 <html lang="en">
@@ -253,9 +253,9 @@ var app = angular.module('ngMacro', []);
    ```
    <p>And add it to our container div (div just under our body) as follows</p>
 
-    ```html
-    <div ngcontroller="macroCtrl" class="container">
-    ```
+```html
+<div ngcontroller="macroCtrl" class="container">
+```
 
   <p>Here we are creating a controller "macroCtrl" and we are passing it a new child
      <code>$scope</code> which is an injectable parameter. This is taken care of by AngularJS, we
@@ -270,46 +270,46 @@ var app = angular.module('ngMacro', []);
   </p>
   <p>Inside index.html add the following after the last "row" div</p>
 
-    ```html
-    <div class="row">
-        <div class="colsm12"><p class="bgprimarykcalflash">
-            <p><b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;</b>
-            &nbsp; {{getMetaRate()}}</p>
-      </div>
-    </div>
-    ```
-   <p>create style.css. Add the following just to keep things looking well and don't forget to add in
-      our html page's head right after bootstrap
-   </p>
-   ```css
-   .kcalflash{
-   padding: 5px;
-   paddingleft:
-   15px;
-   }
-   ```
+```html
+<div class="row">
+    <div class="colsm12"><p class="bgprimarykcalflash">
+        <p><b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;</b>
+        &nbsp; {{getMetaRate()}}</p>
+  </div>
+</div>
+```
+<p>create style.css. Add the following just to keep things looking well and don't forget to add in
+  our html page's head right after bootstrap
+</p>
+```css
+.kcalflash{
+padding: 5px;
+paddingleft:
+15px;
+}
+```
    <p>now lets wire things up...</p>
    <p>Add the following inside our controller.</p>
-   ```javascript
-   $scope.getMetaRate = function(){
-   var meta;
-   if($scope.user.sex === "male"){
-   meta = (88.362 + (13.397 * parseFloat( $scope.user.weight) )
-   +(5.799 * parseFloat( $scope.user.height) )
-   (
-   5.677 * parseFloat( $scope.user.age) ) || 0 );
-   }else if($scope.user.sex === "female"){
-   meta = (447.593 + (9.247 * parseFloat( $scope.user.weight) )
-   +(3.098 * parseFloat( $scope.user.height) )
-   (
-   4.33 * parseFloat( $scope.user.age) ) || 0 );
-   }
-   else meta = null;
-   $scope.user.bmr= meta;
-   return (!isNaN(meta) &amp;&amp; (meta!=null)) ? parseFloat(meta).toFixed(2) : "Please Fill
-   Out the above Form";
-   };
-   ```
+```javascript
+$scope.getMetaRate = function(){
+var meta;
+if($scope.user.sex === "male"){
+meta = (88.362 + (13.397 * parseFloat( $scope.user.weight) )
++(5.799 * parseFloat( $scope.user.height) )
+(
+5.677 * parseFloat( $scope.user.age) ) || 0 );
+}else if($scope.user.sex === "female"){
+meta = (447.593 + (9.247 * parseFloat( $scope.user.weight) )
++(3.098 * parseFloat( $scope.user.height) )
+(
+4.33 * parseFloat( $scope.user.age) ) || 0 );
+}
+else meta = null;
+$scope.user.bmr= meta;
+return (!isNaN(meta) &amp;&amp; (meta!=null)) ? parseFloat(meta).toFixed(2) : "Please Fill
+Out the above Form";
+};
+```
    <p>This might seem scary at first but once you have any experience with javascript its fairly
       easy to understand. Simply put it check if the user is male or female and returns the Metabolic
       rate using the user's weight, height and age which by the way are populated automatically when
@@ -323,55 +323,55 @@ var app = angular.module('ngMacro', []);
    <p>finally we are going to finish of our app by calculating the Calories and displaying them. Add
       the following to the Index page:
    </p>
-   ```html
-   <div class="row">
-      <div class="colsm12">
-         <select name="" id="" class="formcontrol"
-            ngmodel="
-            user.activityLevel"
-            ngchange="{{
-            updateNutrition()}}">
-            <option value="">Select you Activity Level</option>
-            <option ngrepeat="
-               activityLevel in activityLevels"
-               value="{{activityLevel.value}}">{{activityLevel.title}}</option>
-         </select>
-      </div>
-   </div>
-   <div class="row">
-      <div class="colsm12">
-         <table class="table tablebordered">
-            <thead>
-               <th></th>
-               <td ngrepeat="
-                  goal in goals">{{goal.title}}</td>
-            </thead>
-            <tbody>
-               <tr>
-                  <td>Calories:</td>
-                  <td ngrepeat="
-                     goal in goals">{{goal.calories | number:0}}</td>
-               </tr>
-               <tr>
-                  <td>Protien:</td>
-                  <td ngrepeat="
-                     goal in goals">{{goal.protein | number:0}}</td>
-               </tr>
-               <tr>
-                  <td>Fats:</td>
-                  <td ngrepeat="
-                     goal in goals">{{goal.fats | number:0}}</td>
-               </tr>
-               <tr>
-                  <td>Carbs:</td>
-                  <td ngrepeat="
-                     goal in goals">{{goal.carbs | number:0}}</td>
-               </tr>
-            </tbody>
-         </table>
-      </div>
-   </div>
-   ```
+```html
+<div class="row">
+  <div class="colsm12">
+     <select name="" id="" class="formcontrol"
+        ngmodel="
+        user.activityLevel"
+        ngchange="{{
+        updateNutrition()}}">
+        <option value="">Select you Activity Level</option>
+        <option ngrepeat="
+           activityLevel in activityLevels"
+           value="{{activityLevel.value}}">{{activityLevel.title}}</option>
+     </select>
+  </div>
+</div>
+<div class="row">
+  <div class="colsm12">
+     <table class="table tablebordered">
+        <thead>
+           <th></th>
+           <td ngrepeat="
+              goal in goals">{{goal.title}}</td>
+        </thead>
+        <tbody>
+           <tr>
+              <td>Calories:</td>
+              <td ngrepeat="
+                 goal in goals">{{goal.calories | number:0}}</td>
+           </tr>
+           <tr>
+              <td>Protien:</td>
+              <td ngrepeat="
+                 goal in goals">{{goal.protein | number:0}}</td>
+           </tr>
+           <tr>
+              <td>Fats:</td>
+              <td ngrepeat="
+                 goal in goals">{{goal.fats | number:0}}</td>
+           </tr>
+           <tr>
+              <td>Carbs:</td>
+              <td ngrepeat="
+                 goal in goals">{{goal.carbs | number:0}}</td>
+           </tr>
+        </tbody>
+     </table>
+  </div>
+</div>
+```
    <p>Now thats our view template finished. But it will not look right yet as here we are introducing
       2 more AngularJS directives , <a href="">ngRepeat</a> and <a href="">ngChange</a> which
       require functionality and variables setup in the controller.
@@ -383,31 +383,31 @@ var app = angular.module('ngMacro', []);
    <p>ngRepeat is basically a "for" loop that repeats the element for each variable in an array.in
       order for this to display correctly add the following to the controller:
    </p>
-   ```javascript
-   $scope.goals = {
-   current: {
-   title:"Mainteance"
-   ,calories: 0
-   ,protein: 0
-   ,fats: 0
-   ,carbs:0
-   }
-   ,loss: {
-   title:"Fat Loss"
-   ,calories: 0
-   ,protein: 0
-   ,fats: 0
-   ,carbs:0
-   }
-   ,gain:{
-   title:"Muscle Gain"
-   ,calories: 0
-   ,protein: 0
-   ,fats: 0
-   ,carbs:0
-   }
-   }
-   ```
+```javascript
+$scope.goals = {
+current: {
+title:"Mainteance"
+,calories: 0
+,protein: 0
+,fats: 0
+,carbs:0
+}
+,loss: {
+title:"Fat Loss"
+,calories: 0
+,protein: 0
+,fats: 0
+,carbs:0
+}
+,gain:{
+title:"Muscle Gain"
+,calories: 0
+,protein: 0
+,fats: 0
+,carbs:0
+}
+}
+```
    <p>This simply creates and initialises the goals object and now our view will look more finalised
       (but not updating yet)
       code so far: <a
@@ -419,65 +419,65 @@ var app = angular.module('ngMacro', []);
       which we calculated earlier and the the activity level and weight. so add the following to the
       controller:
    </p>
-   ```javascript
-   $scope.activityLevels = [{
-   title: "Little or No Exercise"
-   ,description: "You are Lazy and avoid exercise"
-   ,value: 1.2
-   }
-   ,{
-   title: "Light Exercise"
-   ,description: "Exercise 13
-   times a week"
-   ,value: 1.375
-   }
-   ,{
-   title: "Moderate Exercise"
-   ,description: "Exercise 35
-   times a week"
-   ,value: 1.55
-   }
-   ,{
-   title: "Heavy Exercise"
-   ,description: "You Exercise 67
-   times a week"
-   ,value: 1.725
-   }
-   ,{
-   title: "Professional Athlete"
-   ,description: "You Exercise approximately 2 times a Day"
-   ,value: 1.9
-   }
-   ];
-   $scope.updateNutrition=function(){
-   if(($scope.user.sex === "male" || $scope.user.sex === "female") &amp;&amp;
-   $scope.user.weight>0 &amp;&amp; $scope.user.height>0 &amp;&amp;
-   $scope.user.age>0 &amp;&amp; $scope.user.activityLevel>0){
-   $scope.goals.current.calories = parseFloat($scope.user.bmr * $scope.user.activityLevel)||
-   0;
-   $scope.goals.loss.calories = $scope.goals.current.calories * 0.85 || 0;
-   $scope.goals.gain.calories = $scope.goals.current.calories * 1.15 || 0;
-   $scope.goals.current.protein = $scope.user.weight*2.204 || 0;
-   $scope.goals.loss.protein = $scope.user.weight*2.204 || 0;
-   $scope.goals.gain.protein = $scope.user.weight*2.204*1.5 || 0;
-   $scope.goals.current.carbs = ($scope.goals.current.calories*0.3)/4 || 0;
-   $scope.goals.loss.carbs = ($scope.goals.loss.calories*0.15)/4 || 0;
-   $scope.goals.gain.carbs = ($scope.goals.gain.calories*0.3)/4 || 0;
-   $scope.goals.current.fats = ($scope.goals.current.calories
-   ($
-   scope.goals.current.protein*4)($
-   scope.goals.current.carbs*4))/9 || 0;
-   $scope.goals.loss.fats = ($scope.goals.loss.calories
-   ($
-   scope.goals.loss.protein*4)($
-   scope.goals.loss.carbs*4))/9 || 0;
-   $scope.goals.gain.fats = ($scope.goals.gain.calories
-   ($
-   scope.goals.gain.protein*4)($
-   scope.goals.gain.carbs*4))/9 || 0;
-   }
-   };
-   ```
+```javascript
+$scope.activityLevels = [{
+title: "Little or No Exercise"
+,description: "You are Lazy and avoid exercise"
+,value: 1.2
+}
+,{
+title: "Light Exercise"
+,description: "Exercise 13
+times a week"
+,value: 1.375
+}
+,{
+title: "Moderate Exercise"
+,description: "Exercise 35
+times a week"
+,value: 1.55
+}
+,{
+title: "Heavy Exercise"
+,description: "You Exercise 67
+times a week"
+,value: 1.725
+}
+,{
+title: "Professional Athlete"
+,description: "You Exercise approximately 2 times a Day"
+,value: 1.9
+}
+];
+$scope.updateNutrition=function(){
+if(($scope.user.sex === "male" || $scope.user.sex === "female") &amp;&amp;
+$scope.user.weight>0 &amp;&amp; $scope.user.height>0 &amp;&amp;
+$scope.user.age>0 &amp;&amp; $scope.user.activityLevel>0){
+$scope.goals.current.calories = parseFloat($scope.user.bmr * $scope.user.activityLevel)||
+0;
+$scope.goals.loss.calories = $scope.goals.current.calories * 0.85 || 0;
+$scope.goals.gain.calories = $scope.goals.current.calories * 1.15 || 0;
+$scope.goals.current.protein = $scope.user.weight*2.204 || 0;
+$scope.goals.loss.protein = $scope.user.weight*2.204 || 0;
+$scope.goals.gain.protein = $scope.user.weight*2.204*1.5 || 0;
+$scope.goals.current.carbs = ($scope.goals.current.calories*0.3)/4 || 0;
+$scope.goals.loss.carbs = ($scope.goals.loss.calories*0.15)/4 || 0;
+$scope.goals.gain.carbs = ($scope.goals.gain.calories*0.3)/4 || 0;
+$scope.goals.current.fats = ($scope.goals.current.calories
+($
+scope.goals.current.protein*4)($
+scope.goals.current.carbs*4))/9 || 0;
+$scope.goals.loss.fats = ($scope.goals.loss.calories
+($
+scope.goals.loss.protein*4)($
+scope.goals.loss.carbs*4))/9 || 0;
+$scope.goals.gain.fats = ($scope.goals.gain.calories
+($
+scope.goals.gain.protein*4)($
+scope.goals.gain.carbs*4))/9 || 0;
+}
+};
+```
    <p><a
       href="https://github.com/jonniedarko/ngmacro/
       commit/92234ed8bb4b41bef4270ee3ae257e1df9
