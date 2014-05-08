@@ -252,6 +252,7 @@ var app = angular.module('ngMacro', []);
    });
    ```
    <p>And add it to our container div (div just under our body) as follows</p>
+
     ```html
         <div ngcontroller="macroCtrl" class="container">
     ```
