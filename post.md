@@ -85,7 +85,8 @@ An Introduction to AngularJS
    like:
 </p>
 ```javascript
-{{ expression }}```
+{{ expression }}
+```
 <p>Expressions can evaluate AnguarJS variables ,such as those created by an ngModel
    declaration, evaluating math expression as well as calling a function ( this requires a controller
    and $scope which we will introduce later)
