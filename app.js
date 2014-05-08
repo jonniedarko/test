@@ -61,7 +61,7 @@ app.controller('macroCtrl', function ($scope){
 			meta = (88.362 + (13.397 * parseFloat(  $scope.user.weight) ) 
 					+(5.799 * parseFloat(  $scope.user.height) )
 					-(5.677 * parseFloat(  $scope.user.age) ) || 0 ); 
-					console.log("Meta = "+meta); 
+					
 		}else if($scope.user.sex === "female"){
 			meta = (447.593 + (9.247 * parseFloat(  $scope.user.weight) )
 					+(3.098 * parseFloat(  $scope.user.height) )
