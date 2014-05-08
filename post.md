@@ -197,8 +197,7 @@ An Introduction to AngularJS
 <p>find the input for the user name and add the ngModel attribute "user.name"</p>
 ```html
 <input type="text" class="formcontrol"
-   id="user_name" ngmodule="
-   user.name"
+   id="user_name" ngmodule="user.name"
    placeholder="What's your name?">
 ```
 <p>Now do the Same for user.sex, user.height, user.weight, and user.age. While we are at it
@@ -214,8 +213,7 @@ var app = angular.module('ngMacro', []);
 ```
 <p>inside our index file change our body tag to:</p>
 ```html
-<body ngapp="
-   ngMacro">
+<body ngapp="ngMacro">
    ```
    <p>and under the dependency scripts include our app.js file </p>
    ```javascript
@@ -250,14 +248,13 @@ var app = angular.module('ngMacro', []);
    <p>So lets creat our first controller. Add the following to our app.js file:</p>
    ```javascript
    app.controller('macroCtrl', function ($scope){
-   $scope.user = { };
+        $scope.user = { };
    });
    ```
    <p>And add it to our container div (div just under our body) as follows</p>
    ```html
-   <div ngcontroller="
-      macroCtrl" class="container">
-      ```
+   <div ngcontroller="macroCtrl" class="container">
+   ```
       <p>Here we are creating a controller "macroCtrl" and we are passing it a new child
          <code>$scope</code> which is an injectable parameter. This is taken care of by AngularJS, we
          just need to include it in our function to use it. We also just initialised the user variable.
