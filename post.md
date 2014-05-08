@@ -254,7 +254,7 @@ var app = angular.module('ngMacro', []);
    <p>And add it to our container div (div just under our body) as follows</p>
 
     ```html
-        <div ngcontroller="macroCtrl" class="container">
+    <div ngcontroller="macroCtrl" class="container">
     ```
 
   <p>Here we are creating a controller "macroCtrl" and we are passing it a new child
@@ -271,12 +271,12 @@ var app = angular.module('ngMacro', []);
   <p>Inside index.html add the following after the last "row" div</p>
 
     ```html
-        <div class="row">
-            <div class="colsm12"><p class="bgprimarykcalflash">
-                <p><b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;</b>
-                &nbsp; {{getMetaRate()}}</p>
-          </div>
-        </div>
+    <div class="row">
+        <div class="colsm12"><p class="bgprimarykcalflash">
+            <p><b>&nbsp;{{user.name}}&nbsp;Basic Metabolic Rate: &nbsp;</b>
+            &nbsp; {{getMetaRate()}}</p>
+      </div>
+    </div>
     ```
    <p>create style.css. Add the following just to keep things looking well and don't forget to add in
       our html page's head right after bootstrap
