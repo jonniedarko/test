@@ -480,11 +480,8 @@ $scope.updateNutrition = function () {
       blah)
       (Services &amp; factories)
    </p>
-   <p>sources
-      https://
-      www.AngularJS.org
-      http://
-      www.sitepoint.com/10reasonsuseangularjs/
-      http://
-      getbootstrap.com
-   </p>
+   #sources
+ - https://www.AngularJS.org
+ - http://www.sitepoint.com/10reasonsuseangularjs/
+ - http://getbootstrap.com
+
