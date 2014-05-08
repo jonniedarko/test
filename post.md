@@ -421,61 +421,45 @@ title:"Muscle Gain"
    </p>
 ```javascript
 $scope.activityLevels = [{
-title: "Little or No Exercise"
-,description: "You are Lazy and avoid exercise"
-,value: 1.2
-}
-,{
-title: "Light Exercise"
-,description: "Exercise 13
-times a week"
-,value: 1.375
-}
-,{
-title: "Moderate Exercise"
-,description: "Exercise 35
-times a week"
-,value: 1.55
-}
-,{
-title: "Heavy Exercise"
-,description: "You Exercise 67
-times a week"
-,value: 1.725
-}
-,{
-title: "Professional Athlete"
-,description: "You Exercise approximately 2 times a Day"
-,value: 1.9
-}
-];
-$scope.updateNutrition=function(){
-if(($scope.user.sex === "male" || $scope.user.sex === "female") &amp;&amp;
-$scope.user.weight>0 &amp;&amp; $scope.user.height>0 &amp;&amp;
-$scope.user.age>0 &amp;&amp; $scope.user.activityLevel>0){
-$scope.goals.current.calories = parseFloat($scope.user.bmr * $scope.user.activityLevel)||
-0;
-$scope.goals.loss.calories = $scope.goals.current.calories * 0.85 || 0;
-$scope.goals.gain.calories = $scope.goals.current.calories * 1.15 || 0;
-$scope.goals.current.protein = $scope.user.weight*2.204 || 0;
-$scope.goals.loss.protein = $scope.user.weight*2.204 || 0;
-$scope.goals.gain.protein = $scope.user.weight*2.204*1.5 || 0;
-$scope.goals.current.carbs = ($scope.goals.current.calories*0.3)/4 || 0;
-$scope.goals.loss.carbs = ($scope.goals.loss.calories*0.15)/4 || 0;
-$scope.goals.gain.carbs = ($scope.goals.gain.calories*0.3)/4 || 0;
-$scope.goals.current.fats = ($scope.goals.current.calories
-($
-scope.goals.current.protein*4)($
-scope.goals.current.carbs*4))/9 || 0;
-$scope.goals.loss.fats = ($scope.goals.loss.calories
-($
-scope.goals.loss.protein*4)($
-scope.goals.loss.carbs*4))/9 || 0;
-$scope.goals.gain.fats = ($scope.goals.gain.calories
-($
-scope.goals.gain.protein*4)($
-scope.goals.gain.carbs*4))/9 || 0;
-}
+    title: "Little or No Exercise",
+    description: "You are Lazy and avoid exercise",
+    value: 1.2
+}, {
+    title: "Light Exercise",
+    description: "Exercise 13
+times a week",
+    value: 1.375
+}, {
+    title: "Moderate Exercise",
+    description: "Exercise 35
+times a week",
+    value: 1.55
+}, {
+    title: "Heavy Exercise",
+    description: "You Exercise 67
+times a week",
+    value: 1.725
+}, {
+    title: "Professional Athlete",
+    description: "You Exercise approximately 2 times a Day",
+    value: 1.9
+}];
+$scope.updateNutrition = function () {
+    if (($scope.user.sex === "male" || $scope.user.sex === "female") & amp; & amp; $scope.user.weight > 0 & amp; & amp; $scope.user.height > 0 & amp; & amp; $scope.user.age > 0 & amp; & amp; $scope.user.activityLevel > 0) {
+        $scope.goals.current.calories = parseFloat($scope.user.bmr * $scope.user.activityLevel) ||
+            0;
+        $scope.goals.loss.calories = $scope.goals.current.calories * 0.85 || 0;
+        $scope.goals.gain.calories = $scope.goals.current.calories * 1.15 || 0;
+        $scope.goals.current.protein = $scope.user.weight * 2.204 || 0;
+        $scope.goals.loss.protein = $scope.user.weight * 2.204 || 0;
+        $scope.goals.gain.protein = $scope.user.weight * 2.204 * 1.5 || 0;
+        $scope.goals.current.carbs = ($scope.goals.current.calories * 0.3) / 4 || 0;
+        $scope.goals.loss.carbs = ($scope.goals.loss.calories * 0.15) / 4 || 0;
+        $scope.goals.gain.carbs = ($scope.goals.gain.calories * 0.3) / 4 || 0;
+        $scope.goals.current.fats = ($scope.goals.current.calories($ scope.goals.current.protein * 4)($ scope.goals.current.carbs * 4)) / 9 || 0;
+        $scope.goals.loss.fats = ($scope.goals.loss.calories($ scope.goals.loss.protein * 4)($ scope.goals.loss.carbs * 4)) / 9 || 0;
+        $scope.goals.gain.fats = ($scope.goals.gain.calories($ scope.goals.gain.protein * 4)($ scope.goals.gain.carbs * 4)) / 9 || 0;
+    }
 };
 ```
    <p><a
