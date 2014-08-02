@@ -45,7 +45,7 @@
                   
                   <select name="" id="" class="form-control" ng-model="user.activityLevel" ng-change="{{updateNutrition()}}">
                         <option value="">{{getName(user.name)}}</option>
-                        <option ng-repeat="activityLevel in activityLevel" value="{{activityLevel.value}}">{{activityLevel.title}}</option>
+                        <option ng-repeat="activityLevel in activityLevels" value="{{activityLevel.value}}">{{activityLevel.title}}</option>
                     </select>
                   </p>
                </div>
