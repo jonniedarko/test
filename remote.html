@@ -1,0 +1,97 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ng-macro | Jonnie.io</title>
+
+</head>
+<body>
+
+<div ng-app="ngMacro">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/jonniedarko/test/gh-pages/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://raw.githubusercontent.com/jonniedarko/test/gh-pages/style.css">
+    <div ng-controller="macroCtrl" class="container">
+        <div class="row">
+            <div class="col-sm-12"><h1>Ng-Macro</h1></div>
+        </div>
+         <div class="row">
+               <div class="col-sm-8 form-group"><input type="text" class="form-control" id="user_name" ng-model="user.name" placeholder="What's your name?"></div>
+               <div class="col-sm-4 form-group"><input type="text" class="form-control" id="user_age" ng-model="user.age" placeholder="What's your age?"></div>
+            </div>
+            <div class="row">
+               <div class="col-sm-4 form-group">
+                  <div class="input-group">
+                     <input type="text" class="form-control" id="user_height" ng-model="user.height" placeholder="What's your height?">
+                     <span class="input-group-addon">cm</span>
+                  </div>
+               </div>
+               <div class="col-sm-4 form-group">
+                  <div class="input-group">
+                     <input type="text" class="form-control"  id="user_weight" ng-model="user.weight" placeholder="What's your weight?">
+                     <span class="input-group-addon">kg</span>
+                  </div>
+               </div>
+               <div class="col-sm-4 form-group">
+                  <div class="">
+                     <select name="" id="user_sex" ng-model="user.sex" class="form-control form-control margin-zero">
+                        <option value="">what is your sex?</option>
+                        <option value="male">Male</option>
+                        <option value="female">female</option>
+                     </select>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-sm-12">
+                  <p class="bg-primary kcal-flash">
+                  
+                  <select name="" id="" class="form-control" ng-model="user.activityLevel" ng-change="{{updateNutrition()}}">
+                        <option value="">{{getName(user.name)}}</option>
+                        <option ng-repeat="activityLevel in activityLevels" value="{{activityLevel.value}}">{{activityLevel.title}}</option>
+                    </select>
+                  </p>
+               </div>
+            </div>
+    
+            <div class="row" style="padding:10px;">
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <table class="table table-bordered" >
+                        <thead >
+                            <th></th>
+                              <td >{{goal.title}}</td>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Calories:</td>
+                                <td >{{goal.calories | number:0}}</td>
+                            </tr>
+                            <tr>
+                                <td>Protien:</td>
+                                <td >{{goal.protein | number:0}}</td>
+                            </tr>
+                            <tr>
+                                <td>Fats:</td>
+                                <td >{{goal.fats | number:0}}</td>
+                            </tr>
+                            <tr>
+                                <td>Carbs:</td>
+                                <td >{{goal.carbs | number:0}}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    </div>
+    <!-- Dependencies-->
+    <script src="https://raw.githubusercontent.com/jonniedarko/test/gh-pages/vendor/jquery/jquery.min.js"></script>
+    <script src="https://raw.githubusercontent.com/jonniedarko/test/gh-pages/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://raw.githubusercontent.com/jonniedarko/test/gh-pages/vendor/angular/angular.min.js"></script>
+
+    <script src="https://raw.githubusercontent.com/jonniedarko/test/gh-pages/app.js"></script>
+    </div>
+</body>
+</html>
