@@ -102,20 +102,20 @@ app.controller('macroCtrl', function ($scope){
 
 			$scope.goal.calories = $scope.goal.normalcalories * mul;
 			$scope.goal.fats = $scope.goal.calories /30;
-			$scope.goal.carbs = (($scope.goal.calories/4) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9));
+			$scope.goal.carbs = (($scope.goal.calories) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9))/4;
 			console.log('$scope.goal.fats',$scope.goal.fats);
 
 		}
 		else if($scope.user.activityLevel === 2 || $scope.user.activityLevel === '2'){
 			$scope.goal.calories = $scope.goal.normalcalories * 1;
 			$scope.goal.fats = $scope.goal.calories /30;
-			$scope.goal.carbs = (($scope.goal.calories/4) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9));
+			$scope.goal.carbs = (($scope.goal.calories) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9))/4;
 
 		}
 		else if($scope.user.activityLevel === 3 || $scope.user.activityLevel === '3'){
 			$scope.goal.calories = $scope.goal.normalcalories * 1.2;
 			$scope.goal.fats = $scope.goal.calories /30;
-			$scope.goal.carbs = (($scope.goal.calories/4) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9));
+			$scope.goal.carbs = (($scope.goal.calories) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9))/4;
 
 		}
 	}
