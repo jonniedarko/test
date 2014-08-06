@@ -6,28 +6,28 @@ app.controller('macroCtrl', function ($scope){
     	zero:{
     		 title:"Select a Goal"
 	        ,calories: 0
-	        ,protien: 0
+	        ,protein: 0
 	        ,fats: 0
 	        ,carbs:0
     	}
 	    ,current: {
 	        title:"Mainteance"
 	        ,calories: 0
-	        ,protien: 0
+	        ,protein: 0
 	        ,fats: 0
 	        ,carbs:0
 	    }
 	    ,loss: {
 	        title:"Fat Loss"
 	        ,calories: 0
-	        ,protien: 0
+	        ,protein: 0
 	        ,fats: 0
 	        ,carbs:0
 	    }
 	    ,gain:{
 	        title:"Muscle Gain"
 	        ,calories: 0
-	        ,protien: 0
+	        ,protein: 0
 	        ,fats: 0
 	        ,carbs:0
 	    }
@@ -76,12 +76,12 @@ app.controller('macroCtrl', function ($scope){
 			
 			if($scope.user.sex === "male"){
 				$scope.goal.normalcalories = $scope.user.weight *30;
-				$scope.goal.protien = $scope.user.weight *2.2;
+				$scope.goal.protein = $scope.user.weight *2.2;
 
 			}
 			else if($scope.user.sex === "female"){
 				$scope.goal.normalcalories = $scope.user.weight *30;
-				$scope.goal.protien = $scope.user.weight *2.2;
+				$scope.goal.protein = $scope.user.weight *2.2;
 				
 
 			}
@@ -102,20 +102,20 @@ app.controller('macroCtrl', function ($scope){
 
 			$scope.goal.calories = $scope.goal.normalcalories * mul;
 			$scope.goal.fats = $scope.goal.calories /30;
-			$scope.goal.carbs = (($scope.goal.calories) - ($scope.goal.protien  *4) - ($scope.goal.fats * 9))/4;
+			$scope.goal.carbs = (($scope.goal.calories/4) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9));
 			console.log('$scope.goal.fats',$scope.goal.fats);
 
 		}
 		else if($scope.user.activityLevel === 2 || $scope.user.activityLevel === '2'){
 			$scope.goal.calories = $scope.goal.normalcalories * 1;
 			$scope.goal.fats = $scope.goal.calories /30;
-			$scope.goal.carbs = (($scope.goal.calories) - ($scope.goal.protien  *4) - ($scope.goal.fats * 9))/4;
+			$scope.goal.carbs = (($scope.goal.calories/4) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9));
 
 		}
 		else if($scope.user.activityLevel === 3 || $scope.user.activityLevel === '3'){
 			$scope.goal.calories = $scope.goal.normalcalories * 1.2;
 			$scope.goal.fats = $scope.goal.calories /30;
-			$scope.goal.carbs = (($scope.goal.calories) - ($scope.goal.protien  *4) - ($scope.goal.fats * 9))/4;
+			$scope.goal.carbs = (($scope.goal.calories/4) - ($scope.goal.protein  *4) - ($scope.goal.fats * 9));
 
 		}
 	}
