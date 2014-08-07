@@ -8,7 +8,7 @@
     float:right;
 }
 
-@media (min-width: 1200px)
-.container {
-    width: 970px;
+
+.container.ng-scope {
+    max-width: 970px;
 }
